@@ -2,9 +2,7 @@ package com.binuss.group.Entity;
 
 import java.sql.Date;
 
-import org.hibernate.annotations.ManyToAny;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import Enumeration.Jabatan;
 import jakarta.persistence.Column;
@@ -31,12 +29,11 @@ public class PenugasanKaryawan {
     private long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_karyawan", nullable = false);
+    @JoinColumn(name = "id_karyawan", nullable = false)
     private Karyawan karyawan;
 
-    @JsonIgnore
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_pt", nullable = false);
+    @JoinColumn(name = "id_pt", nullable = false)
     private PT pt;
 
     public PenugasanKaryawan(Karyawan karyawan, PT pt) {

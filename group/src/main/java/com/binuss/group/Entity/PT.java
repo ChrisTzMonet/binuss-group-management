@@ -20,7 +20,7 @@ public class PT {
     private String namaPT;
 
     @Column(name = "alamat_lengkap", nullable = false)
-    private String alamatLeengkap;
+    private String alamatLengkap;
 
     @Column(name = "kota", nullable = false)
     private String kota;
@@ -37,15 +37,25 @@ public class PT {
     public PT() {
     }
 
-    public PT(long id, String namaPT, String alamatLeengkap, String kota, String email, String logo, String npwpPT) {
+    public PT(long id, String namaPT, String alamatLengkap, String kota, String email, String logo, String npwpPT) {
         this.id = id;
         this.namaPT = namaPT;
-        this.alamatLeengkap = alamatLeengkap;
+        this.alamatLengkap = alamatLengkap;
         this.kota = kota;
         this.email = email;
         this.logo = logo;
         this.npwpPT = npwpPT;
     }
+
+    public PT(PT newPt) {
+        this.namaPT = newPt.namaPT;
+        this.alamatLengkap = newPt.alamatLengkap;
+        this.kota = newPt.kota;
+        this.email = newPt.email;
+        this.logo = newPt.logo;
+        this.npwpPT = newPt.npwpPT;
+    }
+
 
     public long getId() {
         return this.id;
@@ -63,12 +73,12 @@ public class PT {
         this.namaPT = namaPT;
     }
 
-    public String getAlamatLeengkap() {
-        return this.alamatLeengkap;
+    public String getAlamatLengkap() {
+        return this.alamatLengkap;
     }
 
-    public void setAlamatLeengkap(String alamatLeengkap) {
-        this.alamatLeengkap = alamatLeengkap;
+    public void setAlamatLengkap(String alamatLengkap) {
+        this.alamatLengkap = alamatLengkap;
     }
 
     public String getKota() {
