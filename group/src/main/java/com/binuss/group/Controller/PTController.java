@@ -4,7 +4,7 @@ package com.binuss.group.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +14,7 @@ import com.binuss.group.Repository.PTRepository;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-
+@CrossOrigin
 @RestController
 @RequestMapping(path = "/binuss/pt")
 public class PTController {
@@ -23,6 +23,7 @@ public class PTController {
 
     @PostMapping("/add")
     public PT addPT(@RequestBody PT newPt) {
+        newPt.IsActive(true);
         PT pt = new PT(newPt);
         System.out.println(pt.getEmail());
         
